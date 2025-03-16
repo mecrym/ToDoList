@@ -55,6 +55,9 @@ function App() {
 		setTodos(filteredTodos)
 	}
 
+	const updateTodo = (id, newDescription, newEndDate) => {
+		setTodos(todos.map(todo => todo.id === id ? { ...todo, description: newDescription, end_date: newEndDate } : todo))
+	}
 
 	const completeTodo = (id) => {
 		setTodos(todos.map(todo => todo.id === id ? { ...todo, completed: !todo.completed } : todo
@@ -96,7 +99,7 @@ function App() {
 
 			<div className="todo-list">
 				{filteredTodos.map((todo) => (//passar pro cadesno do caos, func array q percorre todos os itens do todo
-					<Todo key={todo.id} todo = {todo} removeTodo={removeTodo} completeTodo={completeTodo} archivedTodo={archivedTodo}/>
+					<Todo key={todo.id} todo = {todo} removeTodo={removeTodo} completeTodo={completeTodo} archivedTodo={archivedTodo} updateTodo={updateTodo}/>
 				))}
 			</div>
 			{currentTab === "active" && <TodoForm addTodo={addTodo}/>}
