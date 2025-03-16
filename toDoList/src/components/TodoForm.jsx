@@ -19,6 +19,7 @@ const TodoForm = ({ addTodo }) => {
             <input type="text" placeholder="What's your task?" value={description} onChange={(event) => setDescription(event.target.value)} />
             <input type="date" value={end_date} onChange={(event) => setEnd_date(event.target.value)} />
             <button type="submit">Create Task</button>
+            <button type="reset">Cancel</button>
         </form>
     </div>
 }
