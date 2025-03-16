@@ -8,8 +8,8 @@ const Todo = ({todo}) => {//uma props do caderninho
                 <p className="description">{todo.description}</p>
             </div>
             <div>
-                <button>Finished</button>
-                <button>Delete</button>
+                <button className="finished">Finished</button>
+                <button className="remove">Delete</button>
             </div>
         </div>
     )

@@ -28,15 +28,27 @@ function App() {
 			archived: false,
 		}
 	])
+
+	const addTodo = (description, end_date) => {
+		const newTodos = [...todos, {
+			id: Math.floor(Math.random()*1000),
+			description,
+			end_date,
+			completed: false,
+			archived: false,
+		}]
+
+		setTodos(newTodos)
+	} 
     return (
 		<div className="app">
 			<h1>Your ToDo List!</h1>
 			<div className="todo-list">
 				{todos.map((todo) => (//passar pro cadesno do caos, func array q percorre todos os itens do todo
-					<Todo todo = {todo} />
+					<Todo key={todo.id} todo = {todo} />
 				))}
 			</div>
-			<TodoForm/>
+			<TodoForm addTodo={addTodo}/>
 		</div>
 	);
 }
