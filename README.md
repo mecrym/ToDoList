@@ -22,7 +22,7 @@ A simple and interactive task management application built using React and Boots
   
   ### Backend (Expected API)  
   
-  - **Node.js - Handles CRUD operations on tasks.  
+  - **Node.js** - Handles CRUD operations on tasks.  
   - **JSON-based Mock API** - Placeholder for storing and managing tasks.  
 
 ## API Structure (Mock Data)
