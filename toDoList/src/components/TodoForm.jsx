@@ -1,36 +1,36 @@
-import { useState } from 'react';
-import { Form, Button, Alert } from 'react-bootstrap';
+import { useState } from 'react'
+import { Form, Button, Alert } from 'react-bootstrap'
 
 const TodoForm = ({ addTodo }) => {
-    const [description, setDescription] = useState("");
-    const [end_date, setEnd_date] = useState("");
+    const [description, setDescription] = useState("")
+    const [end_date, setEnd_date] = useState("")
     const [errors, setErrors] = useState({
         description: false,
         end_date: false
-    });
+    })
 
     const handleSubmit = (event) => {
-        event.preventDefault();
+        event.preventDefault()
         const newErrors = {
             description: !description.trim(),
             end_date: !end_date
-        };
+        }
 
-        setErrors(newErrors);
+        setErrors(newErrors)
 
         if (!newErrors.description && !newErrors.end_date) {
-            addTodo(description, end_date);
-            setDescription("");
-            setEnd_date("");
-            setErrors({ description: false, end_date: false });
+            addTodo(description, end_date)
+            setDescription("")
+            setEnd_date("")
+            setErrors({ description: false, end_date: false })
         }
-    };
+    }
 
     const handleReset = () => {
-        setDescription("");
-        setEnd_date("");
-        setErrors({ description: false, end_date: false });
-    };
+        setDescription("")
+        setEnd_date("")
+        setErrors({ description: false, end_date: false })
+    }
 
     return (
         <div className="todo-form p-4 border rounded-3 bg-light mb-4">
@@ -83,7 +83,7 @@ const TodoForm = ({ addTodo }) => {
                 )}
             </Form>
         </div>
-    );
-};
+    )
+}
 
-export default TodoForm;
+export default TodoForm

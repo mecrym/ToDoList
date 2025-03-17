@@ -1,16 +1,6 @@
 import { useState } from "react"
 import { Modal, Button, Badge, Row, Col } from "react-bootstrap"
-import { 
-  format, 
-  startOfMonth, 
-  endOfMonth, 
-  eachDayOfInterval, 
-  isSameMonth, 
-  addMonths,
-  startOfWeek,
-  endOfWeek,
-  isSameDay
-} from "date-fns"
+import { format, startOfMonth, endOfMonth, eachDayOfInterval, isSameMonth, addMonths, startOfWeek, endOfWeek, isSameDay} from "date-fns"
 import { enUS } from "date-fns/locale"
 
 const CalendarView = ({ todos }) => {
@@ -58,7 +48,7 @@ const CalendarView = ({ todos }) => {
 
     return (
         <div className="calendar-view mb-5">
-            <div className="month-navigation d-flex justify-content-between align-items-center mb-3">
+            <div className="month-navigation d-flex justify-content-between align-items-center mb-2">
                 <Button variant="secondary" onClick={() => changeMonth(-1)}>
                     &lt; 
                 </Button>

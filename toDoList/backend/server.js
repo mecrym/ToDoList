@@ -8,8 +8,12 @@ app.use(cors());
 
 const DB_FILE = 'db.json';
 
-// Função para carregar as tarefas
+// Função para carregar as tarefas do JSON
 const loadTodos = () => {
+    if (!fs.existsSync(DB_FILE)) {
+        fs.writeFileSync(DB_FILE, JSON.stringify([], null, 2)); // Cria o arquivo se não existir
+    }
+
     try {
         const data = fs.readFileSync(DB_FILE, 'utf8');
         return JSON.parse(data);
@@ -17,7 +21,6 @@ const loadTodos = () => {
         return [];
     }
 };
-
 // Função para salvar as tarefas
 const saveTodos = (todos) => {
     fs.writeFileSync(DB_FILE, JSON.stringify(todos, null, 2));

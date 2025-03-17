@@ -1,457 +1,196 @@
-/* Importação da fonte Roboto */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Oxanium:wght@400;700&display=swap');
 
-/* Estilos gerais */
 body {
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    min-height: 100vh;
-    background: linear-gradient(to bottom, #1e3c72 0%, #2a5298 100%);
-    background-attachment: fixed;
-    color: #333;
+    font-family: 'Oxanium', cursive !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+    min-height: 100vh !important;
+    background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 50%, #90CAF9 100%) !important;
+    background-attachment: fixed !important;
+    color: #1E3A8A !important;
+    text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.1) !important;
 }
 
-/* Container principal */
 .container {
-    background-color: rgba(255, 255, 255, 0.95);
-    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.9) !important;
+    border-radius: 15px !important;
     padding: 2rem;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    margin: 2rem 0;
+    box-shadow: 0px 0px 15px rgba(30, 58, 138, 0.2) !important;
+    backdrop-filter: blur(8px) !important;
 }
 
-/* Título principal */
 h1.text-center {
-    color: #1e3c72;
-    font-weight: 700;
-    margin-bottom: 2rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    color: #1E3A8A !important;
+    font-weight: 700 !important;
+    margin-bottom: 2rem !important;
+    text-transform: uppercase !important;
+    text-shadow: 0px 0px 5px rgba(30, 58, 138, 0.3) !important;
 }
 
-/* Navegação (Tabs) */
 .nav-tabs {
-    border-bottom: none;
-    margin-bottom: 1.5rem;
+    border-bottom: none !important;
+    margin-bottom: 1.5rem !important;
 }
 
 .nav-link {
-    color: #666;
+    color: #dff0fa !important;
+    font-weight: bold !important;
+    background: linear-gradient(135deg, #1E3A8A, #64B5F6) !important;
     border: none !important;
-    border-radius: 8px;
-    margin-right: 0.5rem;
-    transition: all 0.3s ease;
+    border-radius: 8px !important;
+    margin-right: 0.5rem !important;
+    padding: 10px 15px !important;
+    transition: all 0.3s ease !important;
+    text-shadow: 0px 0px 5px rgba(100, 181, 246, 0.6) !important;
 }
 
 .nav-link.active {
-    background-color: #1e3c72 !important;
-    color: white !important;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(135deg, #90cafa, #d1d6e2) !important;
+    color: #1E3A8A !important;
+    text-transform: uppercase !important;
+    box-shadow: 0px 0px 10px rgba(100, 181, 246, 0.7) !important;
 }
 
 .nav-link:hover {
-    background-color: rgba(30, 60, 114, 0.1);
+    background: linear-gradient(135deg, #42A5F5, #1E3A8A) !important;
 }
 
-/* Badges */
-.badge {
-    font-weight: 500;
-    margin-left: 0.5rem;
-}
-
-/* Cards de tarefas */
 .card {
-    border: none;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-    margin-bottom: 1.5rem;
+    border: none !important;
+    border-radius: 10px !important;
+    background: rgba(255, 255, 255, 0.95) !important;
+    box-shadow: 0px 0px 10px rgba(30, 58, 138, 0.2) !important;
+    transition: all 0.3s ease !important;
+    backdrop-filter: blur(5px) !important;
 }
 
 .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    transform: scale(1.02) !important;
+    box-shadow: 0px 0px 20px rgba(30, 58, 138, 0.3) !important;
 }
 
-.card-body {
-    padding: 1.5rem;
-}
-
-.card-text {
-    color: #555;
-}
-
-/* Botões */
 .btn {
-    border-radius: 8px;
-    padding: 0.5rem 1rem;
-    transition: all 0.3s ease;
+    border-radius: 8px ;
+    padding: 10px 15px ;
+    font-weight: bold ;
+    transition: all 0.3s ease ;
+    text-transform: uppercase;
 }
 
 .btn-outline-primary {
-    border-color: #1e3c72;
-    color: #1e3c72;
+    border: 2px solid #1E3A8A !important;
+    color: #1E3A8A !important;
 }
 
 .btn-outline-primary:hover {
-    background-color: #1e3c72;
-    color: white;
-}
-
-.btn-outline-success {
-    border-color: #28a745;
-    color: #28a745;
-}
-
-.btn-outline-success:hover {
-    background-color: #28a745;
-    color: white;
-}
-
-.btn-outline-secondary {
-    border-color: #6c757d;
-    color: #6c757d;
-}
-
-.btn-outline-secondary:hover {
-    background-color: #6c757d;
-    color: white;
+    background: linear-gradient(135deg, #1E3A8A, #64B5F6) !important;
+    color: white !important;
 }
 
 .btn-outline-danger {
-    border-color: #dc3545;
-    color: #dc3545;
+    border: 2px solid #D32F2F !important;
+    color: #D32F2F !important;
 }
 
 .btn-outline-danger:hover {
-    background-color: #dc3545;
-    color: white;
+    background: linear-gradient(135deg, #D32F2F, #FF5252) !important;
+    color: white !important;
 }
 
-/* Formulário */
 .form-control {
-    border-radius: 8px;
-    border: 1px solid #ddd;
-    transition: all 0.3s ease;
+    border-radius: 8px !important;
+    border: 2px solid rgba(30, 58, 138, 0.3) !important;
+    background: rgba(255, 255, 255, 0.8) !important;
+    color: #1E3A8A !important;
+    padding: 10px !important;
+    transition: all 0.3s ease !important;
 }
 
 .form-control:focus {
-    border-color: #1e3c72;
-    box-shadow: 0 0 0 0.2rem rgba(30, 60, 114, 0.25);
+    border-color: #1E3A8A !important;
+    box-shadow: 0px 0px 10px rgba(30, 58, 138, 0.5) !important;
 }
 
-/* Modal */
-.modal-content {
-    border-radius: 10px;
-    border: none;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-}
-
-.modal-header {
-    background-color: #1e3c72;
-    color: white;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-}
-
-.modal-title {
-    font-weight: 500;
-}
-
-/* Gráficos (StatsView) */
-.chart-container {
-    background-color: white;
-    border-radius: 10px;
-    padding: 1.5rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-/* Responsividade */
-@media (max-width: 768px) {
-    .container {
-        padding: 1rem;
-    }
-
-    h1.text-center {
-        font-size: 1.75rem;
-    }
-
-    .nav-link {
-        font-size: 0.9rem;
-        padding: 0.5rem;
-    }
-}
-
-/* Estilos específicos para o TodoForm */
-.todo-form {
-    background-color: rgba(255, 255, 255, 0.95);
-    border: none;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-}
-
-.todo-form:hover {
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-}
-
-.todo-form h2 {
-    color: #1e3c72;
-    font-weight: 700;
-    margin-bottom: 1.5rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-/* Estilos para os campos do formulário */
-.form-control {
-    border-radius: 8px;
-    border: 1px solid #ddd;
-    padding: 0.75rem;
-    transition: all 0.3s ease;
-}
-
-.form-control:focus {
-    border-color: #1e3c72;
-    box-shadow: 0 0 0 0.2rem rgba(30, 60, 114, 0.25);
-}
-
-.form-control.is-invalid {
-    border-color: #dc3545;
-}
-
-.form-control.is-invalid:focus {
-    box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
-}
-
-/* Estilos para os labels */
-.form-label {
-    font-weight: 500;
-    color: #333;
-}
-
-/* Estilos para os botões */
-.btn {
-    border-radius: 8px;
-    padding: 0.75rem;
-    font-weight: 500;
-    transition: all 0.3s ease;
-}
-
-.btn-primary {
-    background-color: #1e3c72;
-    border: none;
-}
-
-.btn-primary:hover {
-    background-color: #2a5298;
-    transform: translateY(-2px);
-}
-
-.btn-secondary {
-    background-color: #6c757d;
-    border: none;
-}
-
-.btn-secondary:hover {
-    background-color: #5a6268;
-    transform: translateY(-2px);
-}
-
-/* Estilos para o feedback de erro */
-.invalid-feedback {
-    color: #dc3545;
-    font-size: 0.875rem;
-}
-
-/* Estilos para o alerta de erro */
-.alert-danger {
-    background-color: #f8d7da;
-    border-color: #f5c6cb;
-    color: #721c24;
-    border-radius: 8px;
-    padding: 0.75rem;
-    margin-top: 1rem;
-}
-
-/* Estilos específicos para o CalendarView */
 .calendar-view {
-    background-color: rgba(255, 255, 255, 0.95);
-    border-radius: 10px;
-    padding: 1.5rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.month-navigation {
-    background-color: #1e3c72;
-    color: white;
-    padding: 0.75rem;
-    border-radius: 8px;
-    margin-bottom: 1.5rem;
-}
-
-.month-navigation h3 {
-    margin: 0;
-    font-weight: 700;
-    font-size: 1.25rem;
-    color: white;
-}
-
-.month-navigation .btn {
-    background-color: rgba(255, 255, 255, 0.1);
-    border: none;
-    color: white;
-    padding: 0.5rem 1rem;
-    border-radius: 8px;
-    font-weight: 500;
-    transition: background-color 0.3s ease;
-}
-
-.month-navigation .btn:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-}
-
-.week-days {
-    background-color: #f4f7f6;
-    border-radius: 8px;
-    margin-bottom: 0.5rem;
-}
-
-.week-days .col {
-    padding: 0.75rem;
-    font-weight: 500;
-    color: #333;
-    font-size: 0.9rem;
+    background: rgba(255, 255, 255, 0.9) !important;
+    border-radius: 10px !important;
+    padding: 1.5rem !important;
+    box-shadow: 0px 0px 10px rgba(30, 58, 138, 0.3) !important;
 }
 
 .calendar-day {
-    padding: 0.75rem;
-    border: 1px solid #ddd;
-    background-color: white;
-    transition: background-color 0.3s ease;
-    cursor: pointer;
-    font-size: 0.9rem;
-    color: #333;
+    padding: 0.75rem !important;
+    border: 1px solid #1E3A8A !important;
+    background-color: #90CAF9 !important;
+    transition: background-color 0.3s ease !important;
+    cursor: pointer !important;
+    font-size: 1rem !important;
+    font-weight: bold !important;
+    color: #1E3A8A !important;
 }
 
 .calendar-day:hover {
-    background-color: #f4f7f6;
+    background-color: #1E3A8A !important;
+    color: white !important;
 }
 
-.calendar-day.bg-light {
-    background-color: #f8f9fa !important;
-    color: #6c757d;
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem !important;
+    }
+
+    h1.text-center {
+        font-size: 1.5rem !important;
+    }
+
+    .nav-link {
+        font-size: 0.9rem !important;
+        padding: 8px 12px !important;
+    }
+
+    .calendar-day {
+        font-size: 0.85rem !important;
+        min-height: 60px !important;
+    }
 }
 
-.calendar-day .badge {
-    background-color: #1e3c72;
-    color: white;
-    font-weight: 500;
-    font-size: 0.8rem;
+.todo-form {
+    background: rgba(255, 255, 255, 0.95) !important;
+    border-radius: 10px !important;
+    padding: 2rem !important;
+    box-shadow: 0px 0px 10px rgba(30, 58, 138, 0.2) !important;
+    backdrop-filter: blur(5px) !important;
 }
 
-.mobile-calendar {
-    background-color: white;
-    border-radius: 8px;
-    padding: 1rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+.todo-form h2 {
+    color: #1E3A8A !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    text-shadow: 0px 0px 3px rgba(30, 58, 138, 0.3) !important;
 }
 
-.mobile-calendar .flex-shrink-0 {
-    background-color: white;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    transition: background-color 0.3s ease;
-    font-size: 0.9rem;
-    color: #333;
+.todo-form .btn-primary {
+    background: linear-gradient(135deg, #1E3A8A, #64B5F6) !important;
+    border: none !important;
+    font-weight: bold !important;
+    transition: all 0.3s ease !important;
 }
 
-.mobile-calendar .flex-shrink-0:hover {
-    background-color: #f4f7f6;
+.todo-form .btn-primary:hover {
+    background: linear-gradient(135deg, #64B5F6, #1E3A8A) !important;
 }
 
-.modal-content {
-    border-radius: 10px;
-    border: none;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+.todo-form .btn-secondary {
+    background: #90CAF9 !important;
+    border: none !important;
+    font-weight: bold !important;
+    color: #1E3A8A !important;
+    transition: all 0.3s ease !important;
 }
 
-.modal-header {
-    background-color: #1e3c72;
-    color: white;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-}
-
-.modal-title {
-    font-weight: 500;
-    font-size: 1.1rem;
-}
-
-.list-group-item {
-    border: none;
-    padding: 0.75rem;
-    margin-bottom: 0.5rem;
-    border-radius: 8px;
-    transition: background-color 0.3s ease;
-    font-size: 0.9rem;
-    color: #333;
-}
-
-.list-group-item:hover {
-    background-color: #f4f7f6;
-}
-
-.list-group-item .badge {
-    font-weight: 500;
-    font-size: 0.8rem;
-}
-
-/* Estilos específicos para o Search */
-.search-container {
-    margin: 1.5rem 0;
-}
-
-.input-group {
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-}
-
-.input-group:hover {
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-}
-
-.form-control {
-    border: 1px solid #ddd;
-    border-radius: 8px 0 0 8px;
-    padding: 0.75rem 1rem;
-    font-size: 0.9rem;
-    color: #333;
-    transition: all 0.3s ease;
-}
-
-.form-control:focus {
-    border-color: #1e3c72;
-    box-shadow: 0 0 0 0.2rem rgba(30, 60, 114, 0.25);
-}
-
-.input-group-text {
-    background-color: #1e3c72;
-    border: 1px solid #1e3c72;
-    border-radius: 0 8px 8px 0;
-    color: white;
-    padding: 0.75rem 1rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.input-group-text:hover {
-    background-color: #2a5298;
-    border-color: #2a5298;
-}
-
-.input-group-text i {
-    font-size: 1rem;
+.todo-form .btn-secondary:hover {
+    background: #64B5F6 !important;
+    color: white !important;
 }

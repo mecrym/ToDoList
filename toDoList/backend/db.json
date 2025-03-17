@@ -1,0 +1,65 @@
+[
+  {
+    "id": 1,
+    "description": "Finalizar projeto Robbson's",
+    "end_date": "2025-03-17",
+    "completed": false,
+    "archived": false
+  },
+  {
+    "id": 2,
+    "description": "Estudar para prova",
+    "end_date": "2025-03-20",
+    "completed": true,
+    "archived": false
+  },
+  {
+    "id": 3,
+    "description": "Treinar para campeonato de Regex",
+    "end_date": "2025-03-26",
+    "completed": false,
+    "archived": false
+  },
+  {
+    "id": 4,
+    "description": "Revisar projeto do cliente X",
+    "end_date": "2025-03-18",
+    "completed": false,
+    "archived": true
+  },
+  {
+    "id": 5,
+    "description": "Criar apresentação para reunião",
+    "end_date": "2025-03-19",
+    "completed": false,
+    "archived": false
+  },
+  {
+    "id": 6,
+    "description": "Atualizar documentação do sistema",
+    "end_date": "2025-03-21",
+    "completed": false,
+    "archived": false
+  },
+  {
+    "id": 7,
+    "description": "Enviar relatório financeiro",
+    "end_date": "2025-03-22",
+    "completed": false,
+    "archived": false
+  },
+  {
+    "id": 8,
+    "description": "Planejar viagem de férias",
+    "end_date": "2025-04-01",
+    "completed": false,
+    "archived": true
+  },
+  {
+    "id": 1742184376872,
+    "description": "teste",
+    "end_date": "2025-03-18",
+    "completed": false,
+    "archived": false
+  }
+]
