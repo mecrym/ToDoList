@@ -79,7 +79,7 @@ function App() {
 
     return (
         <Container className="py-4 p-4 mt-6 " style={{ maxWidth: "1200px" }}>
-            <h1 className="text-center mb-4">Your ToDo List!</h1>
+            <h1 className="text-center mb-4">Your To Do List!</h1>
 
             <Search search={search} setSearch={setSearch} />
 
