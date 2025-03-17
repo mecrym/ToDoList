@@ -18,7 +18,7 @@
     "description": "Prepare slides for project presentation",
     "end_date": "2025-03-26",
     "completed": true,
-    "archived": false
+    "archived": true
   },
   {
     "id": 4,
@@ -39,7 +39,7 @@
     "description": "Send progress report to the manager",
     "end_date": "2025-03-22",
     "completed": true,
-    "archived": false
+    "archived": true
   },
   {
     "id": 7,
@@ -50,8 +50,22 @@
   },
   {
     "id": 1742219451873,
-    "description": "prova de circuitos elétricos",
+    "description": "eletric circuits test",
     "end_date": "2025-03-24",
+    "completed": false,
+    "archived": false
+  },
+  {
+    "id": 1742220144635,
+    "description": "graduation day (Ju)",
+    "end_date": "2025-03-19",
+    "completed": false,
+    "archived": false
+  },
+  {
+    "id": 1742220905380,
+    "description": "ReactJS tutorial",
+    "end_date": "2025-03-16",
     "completed": false,
     "archived": false
   }

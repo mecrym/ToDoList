@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { Modal, Button, Badge, Row, Col } from "react-bootstrap"
-import { format, startOfMonth, endOfMonth, eachDayOfInterval, isSameMonth, addMonths, startOfWeek, endOfWeek, isSameDay} from "date-fns"
+import { format, startOfMonth, endOfMonth, eachDayOfInterval, isSameMonth, addMonths, startOfWeek, endOfWeek, isSameDay, addDays } from "date-fns"
 import { enUS } from "date-fns/locale"
 
 const CalendarView = ({ todos }) => {
@@ -12,9 +12,7 @@ const CalendarView = ({ todos }) => {
         const monthStart = startOfMonth(currentMonth)
         const startDate = startOfWeek(monthStart, { weekStartsOn: 0 })
         const endDate = endOfWeek(endOfMonth(currentMonth), { weekStartsOn: 0 })
-        
         const days = eachDayOfInterval({ start: startDate, end: endDate })
-        
         const weeks = []
         while (days.length) {
             weeks.push(days.splice(0, 7))
@@ -23,25 +21,15 @@ const CalendarView = ({ todos }) => {
     }
 
     const countTasksByDate = (date) => {
-        return todos.filter(todo => {
-            const todoDate = new Date(todo.end_date)
-            return isSameDay(todoDate, date)
-        }).length
+        return todos.filter(todo => isSameDay(addDays(new Date(todo.end_date), 1), date)).length
     }
 
     const changeMonth = (direction) => {
-        setCurrentMonth(new Date(
-            currentMonth.getFullYear(),
-            currentMonth.getMonth() + direction,
-            1
-        ))
+        setCurrentMonth(addMonths(currentMonth, direction))
     }
 
     const getDateTasks = () => {
-        return todos.filter(todo => {
-            const todoDate = new Date(todo.end_date)
-            return selectedDate && isSameDay(todoDate, selectedDate)
-        })
+        return todos.filter(todo => selectedDate && isSameDay(addDays(new Date(todo.end_date), 1), selectedDate))
     }
 
     const weeks = getCalendarGrid()
@@ -50,7 +38,7 @@ const CalendarView = ({ todos }) => {
         <div className="calendar-view mb-5">
             <div className="month-navigation d-flex justify-content-between align-items-center mb-2">
                 <Button className="btn btn-sm btn-outline-primary" variant="secondary" onClick={() => changeMonth(-1)}>
-                    &lt; 
+                    &lt;
                 </Button>
                 <h3 className="mb-0 text-capitalize">
                     {format(currentMonth, "MMMM yyyy", { locale: enUS })}
@@ -66,10 +54,7 @@ const CalendarView = ({ todos }) => {
                         <Col 
                             key={day}
                             className="text-center fw-bold py-2 border"
-                            style={{
-                                flex: '0 0 14.2857%',
-                                maxWidth: '14.2857%'
-                            }}
+                            style={{ flex: '0 0 14.2857%', maxWidth: '14.2857%' }}
                         >
                             {day}
                         </Col>
@@ -89,7 +74,6 @@ const CalendarView = ({ todos }) => {
                                     style={{
                                         flex: '0 0 14.2857%',
                                         maxWidth: '14.2857%',
-                                        minmaxHeight: 'fit-content',
                                         cursor: 'pointer',
                                         color: isSameDay(date, new Date()) ? "#fff" : "inherit",
                                         backgroundColor: isSameDay(date, new Date()) ? "#1e3c72" : "inherit"
@@ -100,52 +84,18 @@ const CalendarView = ({ todos }) => {
                                     }}
                                 >
                                     <div className="d-flex flex-column h-100 justify-content-start align-items-center">
-                                        <div className="fw-bold mb-2">{format(date, "d")}</div>
-                                        
+                                        <div className="fw-bold">{format(date, "d")}</div>
+                                        {taskCount > 0 && (
+                                            <Badge bg="primary" pill className="mt-1">
+                                                {taskCount}
+                                            </Badge>
+                                        )}
                                     </div>
                                 </Col>
                             )
                         })}
                     </Row>
                 ))}
-            </div>
-
-            <div className="d-md-none mobile-calendar">
-                <div className="d-flex flex-nowrap overflow-x-auto pb-2 px-2">
-                    {eachDayOfInterval({
-                        start: startOfMonth(currentMonth),
-                        end: endOfMonth(currentMonth)
-                    }).map((date) => {
-                        const isCurrentMonth = isSameMonth(date, currentMonth)
-                        const taskCount = countTasksByDate(date)
-
-                        return (
-                            <div 
-                                key={date}
-                                className="flex-shrink-0 me-2 text-center"
-                                style={{ width: '75px' }}
-                            >
-                                <div 
-                                    className={`p-2 rounded ${!isCurrentMonth ? "bg-light text-muted" : "border"}`}
-                                    onClick={() => {
-                                        setSelectedDate(date)
-                                        setShowDateTasks(true)
-                                    }}
-                                >
-                                    <div className="small text-uppercase">
-                                        {format(date, "EEE", { locale: enUS })}
-                                    </div>
-                                    <div className="fw-bold my-1">{format(date, "d")}</div>
-                                    {taskCount > 0 && (
-                                        <Badge bg="primary" pill className="d-block mx-auto">
-                                            {taskCount}
-                                        </Badge>
-                                    )}
-                                </div>
-                            </div>
-                        )
-                    })}
-                </div>
             </div>
 
             <Modal show={showDateTasks} onHide={() => setShowDateTasks(false)}>

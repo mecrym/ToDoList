@@ -1,13 +1,12 @@
-import { Doughnut, Bar } from 'react-chartjs-2'
+import { Doughnut } from 'react-chartjs-2'
 import { Card, Col, Row } from 'react-bootstrap'
-import { Chart as ChartJS, ArcElement, Tooltip, Legend, CategoryScale, LinearScale, BarElement } from 'chart.js'
+import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js'
 
-ChartJS.register(ArcElement, Tooltip, Legend, CategoryScale, LinearScale, BarElement)
+ChartJS.register(ArcElement, Tooltip, Legend)
 
 const StatsView = ({ todos }) => {
     const currentMonth = new Date().getMonth()
 
-    // Filtra as tarefas do mês atual
     const monthlyStats = todos.filter(todo => {
         const todoDate = new Date(todo.end_date)
         return todoDate.getMonth() === currentMonth
@@ -26,46 +25,9 @@ const StatsView = ({ todos }) => {
         }]
     }
 
-    const daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
-    const dayCounts = Array(7).fill(0)
-
-    const today = new Date()
-    const startOfWeek = new Date(today)
-    startOfWeek.setDate(today.getDate() - today.getDay());
-    startOfWeek.setHours(0, 0, 0, 0)
-
-    const endOfWeek = new Date(startOfWeek)
-    endOfWeek.setDate(startOfWeek.getDate() + 6)
-    endOfWeek.setHours(23, 59, 59, 999)
-
-    const currentWeekTodos = todos.filter(todo => {
-        const todoDate = new Date(todo.end_date)
-        return todoDate >= startOfWeek && todoDate <= endOfWeek
-    })
-
-    currentWeekTodos.forEach(todo => {
-        const todoDate = new Date(todo.end_date)
-        todoDate.setDate(todoDate.getDate() + 1) //pura gambiarra, estudar sobre depois
-        const day = todoDate.getDay()
-        dayCounts[day]++
-    });
-
-    const barData = {
-        labels: daysOfWeek,
-        datasets: [{
-            label: 'Tasks per Day (Current Week)',
-            data: dayCounts,
-            backgroundColor: [
-                '#FF6384', '#36A2EB', '#FFCE56',
-                '#4BC0C0', '#9966FF', '#FF9F40', '#2ECC71'
-            ],
-            borderWidth: 1
-        }]
-    }
-
     return (
         <Row className="g-4">
-            <Col md={6}>
+            <Col md={12}>
                 <Card>
                     <Card.Body>
                         <Card.Title>Monthly Tasks Distribution</Card.Title>
@@ -76,31 +38,6 @@ const StatsView = ({ todos }) => {
                                     maintainAspectRatio: false,
                                     plugins: {
                                         legend: { position: 'bottom' }
-                                    }
-                                }}
-                            />
-                        </div>
-                    </Card.Body>
-                </Card>
-            </Col>
-
-            <Col md={6}>
-                <Card>
-                    <Card.Body>
-                        <Card.Title>Weekly Tasks Distribution</Card.Title>
-                        <div style={{ height: '300px' }}>
-                            <Bar 
-                                data={barData}
-                                options={{
-                                    maintainAspectRatio: false,
-                                    scales: {
-                                        y: {
-                                            beginAtZero: true,
-                                            ticks: { stepSize: 1 }
-                                        }
-                                    },
-                                    plugins: {
-                                        legend: { display: false }
                                     }
                                 }}
                             />
