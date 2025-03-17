@@ -101,13 +101,7 @@ const CalendarView = ({ todos }) => {
                                 >
                                     <div className="d-flex flex-column h-100 justify-content-start align-items-center">
                                         <div className="fw-bold mb-2">{format(date, "d")}</div>
-                                        <div className="mt-auto">
-                                            {taskCount > 0 && (
-                                                <Badge bg="primary" pill className="mx-auto">
-                                                    {taskCount}
-                                                </Badge>
-                                            )}
-                                        </div>
+                                        
                                     </div>
                                 </Col>
                             )
@@ -133,7 +127,6 @@ const CalendarView = ({ todos }) => {
                             >
                                 <div 
                                     className={`p-2 rounded ${!isCurrentMonth ? "bg-light text-muted" : "border"}`}
-                                    style={{ cursor: 'pointer' }}
                                     onClick={() => {
                                         setSelectedDate(date)
                                         setShowDateTasks(true)

@@ -17,6 +17,7 @@
     "axios": "^1.8.3",
     "bootstrap": "^5.3.3",
     "chart.js": "^4.4.8",
+    "cors": "^2.8.5",
     "date-fns": "^4.1.0",
     "react": "^19.0.0",
     "react-bootstrap": "^2.10.9",

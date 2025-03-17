@@ -42,7 +42,7 @@ const Todo = ({ todo, removeTodo, completeTodo, archivedTodo, updateTodo }) => {
                         </div>
                         <small className="text-muted text-nowrap">
                             <Calendar className="me-1" size={12} />
-                            {new Date(todo.end_date).toLocaleDateString('en-US')}
+                            {new Date(todo.end_date).toJSON().slice(0, 10)}
                         </small>
                     </div>
 

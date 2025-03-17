@@ -15,11 +15,15 @@ const TodoForm = ({ addTodo }) => {
             description: !description.trim(),
             end_date: !end_date
         }
-
+    
         setErrors(newErrors)
-
+    
         if (!newErrors.description && !newErrors.end_date) {
-            addTodo(description, end_date)
+            // Correção crucial para o problema da data
+            const date = new Date(end_date)
+            const adjustedDate = new Date(date.getTime() + (date.getTimezoneOffset() * 60000))
+            
+            addTodo(description, adjustedDate.toISOString().split('T')[0])
             setDescription("")
             setEnd_date("")
             setErrors({ description: false, end_date: false })

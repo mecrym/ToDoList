@@ -6,7 +6,8 @@ ChartJS.register(ArcElement, Tooltip, Legend, CategoryScale, LinearScale, BarEle
 
 const StatsView = ({ todos }) => {
     const currentMonth = new Date().getMonth()
-    
+
+    // Filtra as tarefas do mês atual
     const monthlyStats = todos.filter(todo => {
         const todoDate = new Date(todo.end_date)
         return todoDate.getMonth() === currentMonth
@@ -20,10 +21,7 @@ const StatsView = ({ todos }) => {
                 monthlyStats.filter(t => t.completed).length,
                 monthlyStats.filter(t => !t.completed && !t.archived).length
             ],
-            backgroundColor: [
-                '#28a745',
-                '#007bff'
-            ],
+            backgroundColor: ['#28a745', '#007bff'],
             hoverOffset: 4
         }]
     }
@@ -33,7 +31,7 @@ const StatsView = ({ todos }) => {
 
     const today = new Date()
     const startOfWeek = new Date(today)
-    startOfWeek.setDate(today.getDate() - today.getDay())
+    startOfWeek.setDate(today.getDate() - today.getDay());
     startOfWeek.setHours(0, 0, 0, 0)
 
     const endOfWeek = new Date(startOfWeek)
@@ -46,16 +44,21 @@ const StatsView = ({ todos }) => {
     })
 
     currentWeekTodos.forEach(todo => {
-        const day = new Date(todo.end_date).getDay()
+        const todoDate = new Date(todo.end_date)
+        todoDate.setDate(todoDate.getDate() + 1) //pura gambiarra, estudar sobre depois
+        const day = todoDate.getDay()
         dayCounts[day]++
-    })
+    });
 
     const barData = {
         labels: daysOfWeek,
         datasets: [{
             label: 'Tasks per Day (Current Week)',
             data: dayCounts,
-            backgroundColor: '#17a2b8',
+            backgroundColor: [
+                '#FF6384', '#36A2EB', '#FFCE56',
+                '#4BC0C0', '#9966FF', '#FF9F40', '#2ECC71'
+            ],
             borderWidth: 1
         }]
     }

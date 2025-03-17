@@ -99,19 +99,10 @@ function App() {
                         className="mb-3 flex-nowrap overflow-auto"
                     >
                         <Nav.Item>
-                            <Nav.Link eventKey="all">All <Badge bg="secondary">{todos.length}</Badge></Nav.Link>
-                        </Nav.Item>
-                        <Nav.Item>
-                            <Nav.Link eventKey="today">
-                                Today<Badge bg="primary">
-                                    {todos.filter(t => 
-                                        new Date(t.end_date).toDateString() === new Date().toDateString()
-                                    ).length}
-                                </Badge>
-                            </Nav.Link>
-                        </Nav.Item>
-                        <Nav.Item>
                             <Nav.Link eventKey="active">Active <Badge bg="primary">{todos.filter(t => !t.completed && !t.archived).length}</Badge></Nav.Link>
+                        </Nav.Item>
+                        <Nav.Item>
+                            <Nav.Link eventKey="all">All <Badge bg="secondary">{todos.length}</Badge></Nav.Link>
                         </Nav.Item>
                         <Nav.Item>
                             <Nav.Link eventKey="archived">Archived <Badge bg="dark">{todos.filter(t => t.archived).length}</Badge></Nav.Link>
