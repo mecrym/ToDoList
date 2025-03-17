@@ -75,14 +75,16 @@ const Todo = ({ todo, removeTodo, completeTodo, archivedTodo, updateTodo }) => {
                                 </Button>
                             </>
                         )}
-                        <Button 
-                            variant={todo.archived ? "outline-info" : "outline-secondary"} 
-                            size="sm"
-                            onClick={() => archivedTodo(todo.id)}
-                            title={todo.archived ? "Unarchive" : "Archive"}
-                        >
-                            <Archive size={16} />
-                        </Button>
+                        {todo.completed && (
+                            <Button 
+                                variant={todo.archived ? "outline-info" : "outline-secondary"} 
+                                size="sm"
+                                onClick={() => archivedTodo(todo.id)}
+                                title={todo.archived ? "Unarchive" : "Archive"}
+                            >
+                                <Archive size={16} />
+                            </Button>
+                        )}
                         <Button 
                             variant="outline-danger" 
                             size="sm"

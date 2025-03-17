@@ -29,15 +29,21 @@ h1.text-center {
     text-shadow: 0px 0px 5px rgba(30, 58, 138, 0.3) !important;
 }
 
+h3{
+    color: #1E3A8A !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    text-shadow: 0px 0px 5px rgba(30, 58, 138, 0.3) !important;
+}
 .nav-tabs {
     border-bottom: none !important;
     margin-bottom: 1.5rem !important;
 }
 
 .nav-link {
-    color: #dff0fa !important;
+    color: #1E3A8A !important;
     font-weight: bold !important;
-    background: linear-gradient(135deg, #1E3A8A, #64B5F6) !important;
+    background: linear-gradient(135deg, #90cafa, #d1d6e2) !important;
     border: none !important;
     border-radius: 8px !important;
     margin-right: 0.5rem !important;
@@ -47,8 +53,8 @@ h1.text-center {
 }
 
 .nav-link.active {
-    background: linear-gradient(135deg, #90cafa, #d1d6e2) !important;
-    color: #1E3A8A !important;
+    background: linear-gradient(135deg, #1E3A8A, #64B5F6) !important;
+    color: #dff0fa !important;
     text-transform: uppercase !important;
     box-shadow: 0px 0px 10px rgba(100, 181, 246, 0.7) !important;
 }
@@ -81,6 +87,7 @@ h1.text-center {
 
 .btn-outline-primary {
     border: 2px solid #1E3A8A !important;
+    background-color: #ffffff !important;
     color: #1E3A8A !important;
 }
 

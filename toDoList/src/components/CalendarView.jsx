@@ -49,13 +49,13 @@ const CalendarView = ({ todos }) => {
     return (
         <div className="calendar-view mb-5">
             <div className="month-navigation d-flex justify-content-between align-items-center mb-2">
-                <Button variant="secondary" onClick={() => changeMonth(-1)}>
+                <Button className="btn btn-sm btn-outline-primary" variant="secondary" onClick={() => changeMonth(-1)}>
                     &lt; 
                 </Button>
                 <h3 className="mb-0 text-capitalize">
                     {format(currentMonth, "MMMM yyyy", { locale: enUS })}
                 </h3>
-                <Button variant="secondary" onClick={() => changeMonth(1)}>
+                <Button className="btn btn-sm btn-outline-primary" variant="secondary" onClick={() => changeMonth(1)}>
                     &gt;
                 </Button>
             </div>

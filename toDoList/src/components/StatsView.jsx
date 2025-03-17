@@ -5,7 +5,6 @@ import { Chart as ChartJS, ArcElement, Tooltip, Legend, CategoryScale, LinearSca
 ChartJS.register(ArcElement, Tooltip, Legend, CategoryScale, LinearScale, BarElement)
 
 const StatsView = ({ todos }) => {
-    // Dados para o gráfico de donut
     const currentMonth = new Date().getMonth()
     
     const monthlyStats = todos.filter(todo => {
@@ -14,28 +13,39 @@ const StatsView = ({ todos }) => {
     })
 
     const donutData = {
-        labels: ['Completed', 'Archived', 'Active'],
+        labels: ['Completed', 'Active'],
         datasets: [{
             label: 'Tasks',
             data: [
                 monthlyStats.filter(t => t.completed).length,
-                monthlyStats.filter(t => t.archived).length,
                 monthlyStats.filter(t => !t.completed && !t.archived).length
             ],
             backgroundColor: [
                 '#28a745',
-                '#6c757d',
                 '#007bff'
             ],
             hoverOffset: 4
         }]
     }
 
-    // Dados para o gráfico de barras
     const daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
     const dayCounts = Array(7).fill(0)
 
-    todos.forEach(todo => {
+    const today = new Date()
+    const startOfWeek = new Date(today)
+    startOfWeek.setDate(today.getDate() - today.getDay())
+    startOfWeek.setHours(0, 0, 0, 0)
+
+    const endOfWeek = new Date(startOfWeek)
+    endOfWeek.setDate(startOfWeek.getDate() + 6)
+    endOfWeek.setHours(23, 59, 59, 999)
+
+    const currentWeekTodos = todos.filter(todo => {
+        const todoDate = new Date(todo.end_date)
+        return todoDate >= startOfWeek && todoDate <= endOfWeek
+    })
+
+    currentWeekTodos.forEach(todo => {
         const day = new Date(todo.end_date).getDay()
         dayCounts[day]++
     })
@@ -43,7 +53,7 @@ const StatsView = ({ todos }) => {
     const barData = {
         labels: daysOfWeek,
         datasets: [{
-            label: 'Tasks per Day',
+            label: 'Tasks per Day (Current Week)',
             data: dayCounts,
             backgroundColor: '#17a2b8',
             borderWidth: 1
@@ -74,7 +84,7 @@ const StatsView = ({ todos }) => {
             <Col md={6}>
                 <Card>
                     <Card.Body>
-                        <Card.Title>Tasks by Week Day</Card.Title>
+                        <Card.Title>Weekly Tasks Distribution</Card.Title>
                         <div style={{ height: '300px' }}>
                             <Bar 
                                 data={barData}
