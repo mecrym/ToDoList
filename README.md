@@ -4,11 +4,11 @@ A simple and interactive task management application built using React and Boots
 
   ## Features  
   
-  - ✅ **Task Management:** Create, edit, delete, and mark tasks as completed.  
+  - ✅ **Task Management:** Create, edit, delete, and mark tasks as completed and archive them.  
   - 🔎 **Search Functionality:** Quickly find tasks using a search bar.  
   - 📅 **Calendar View:** Visual representation of tasks on a calendar.  
   - 📊 **Task Statistics:** Graphical representation of completed and pending tasks using charts.  
-  - 🔍 **Filtering Options:** View tasks by status (all, active, completed, archived, today).  
+  - 🔍 **Filtering Options:** View tasks by status (all, active, archived).  
 
 ## Technologies Used  
   
@@ -25,19 +25,6 @@ A simple and interactive task management application built using React and Boots
   - **Node.js - Handles CRUD operations on tasks.  
   - **JSON-based Mock API** - Placeholder for storing and managing tasks.  
 
-
-## Setup & Installation  
-
-1. Clone this repository:  
-   ```sh
-   git clone https://github.com/your-repo/todo-app.git
-   cd todo-app
-2. Install dependencies:
-   ```sh
-   npm install
-3. Start the development server:
-   ```sh
-   npm start
 ## API Structure (Mock Data)
 The application interacts with an API that follows this structure:
   ```json
