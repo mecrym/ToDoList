@@ -24,7 +24,8 @@ A simple and interactive task management application built using React and Boots
   
   - **Node.js** - Handles CRUD operations on tasks.  
   - **JSON-based Mock API** - Placeholder for storing and managing tasks.  
-
+## Setting up for testing
+  Assuming you already have Node.js installed, you need to open the terminal and type: ```cd folder-name``` (in my case, it’s toDoList). Then type ```npm run dev```. After that, open a second terminal, type ```cd folder-name``` again, and then type ```npm run server.js```. This part is very important because errors during this step can cause CORS issues.
 ## API Structure (Mock Data)
 The application interacts with an API that follows this structure:
   ```json
